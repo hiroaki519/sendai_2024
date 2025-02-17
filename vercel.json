@@ -1,17 +1,16 @@
 {
-    "regions": [
-        "hnd1"
-    ],
-    "functions": {
-        "api/index.php": {
-            "runtime": "vercel-php@0.6.2"
-        }
-    },
-    "routes": [
+    "version": 2,
+    "builds": [
         {
-            "src": "/build/(.*)",
-            "dest": "/public/build/"
+            "src": "/api/index.php",
+            "use": "vercel-php@0.7.3"
         },
+        {
+            "src": "/public/**",
+            "use": "vercel-php@0.7.3"
+        }
+    ],
+    "routes": [
         {
             "src": "/(.*)",
             "dest": "/api/index.php"
